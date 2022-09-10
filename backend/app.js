@@ -1,3 +1,5 @@
+require('dotenv').config() // carrega dados do .env
+
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -7,6 +9,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+// Conexão com o banco de dados remoto
+const connectDb = require('./config/database')
+connectDb()
 
 app.use(logger('dev'));
 app.use(express.json());
