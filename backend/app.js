@@ -26,6 +26,7 @@ app.use('/', indexRouter);
 const userRoute = require('./routes/user')
 app.use('/user', userRoute)
 
-
+const assessmentRoute = require('./routes/assessment')
+app.use('/assessment', assessmentRoute)
 
 module.exports = app;
