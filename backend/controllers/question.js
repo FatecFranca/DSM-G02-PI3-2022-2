@@ -1,4 +1,4 @@
-const Assessment = require('../models/Assessment')
+const Question = require('../models/Question')
 
 const controller = {} // Objeto vazio
 
@@ -13,7 +13,7 @@ const controller = {} // Objeto vazio
 
 controller.create = async (req, res) => {
     try {
-        const result = await Assessment.create(req.body)
+        const result = await Question.create(req.body)
         // HTTP 201: Created
         res.status(200).send(result)
 
@@ -27,7 +27,7 @@ controller.create = async (req, res) => {
 controller.retrieveAll = async (req, res) => {
     try {
         // find() sem parametros retorna todos os documentos
-        const result = await Assessment.find().populate('user')
+        const result = await Question.find().populate('criterion').populate('glossary_refs')
 
         // HTTP 200: OK (implicito)
         res.send(result)
@@ -41,7 +41,7 @@ controller.retrieveAll = async (req, res) => {
 
 controller.retrieveOne = async (req, res) => {
     try {
-        const result = await Assessment.findById(req.params.id).populate('user')
+        const result = await Question.findById(req.params.id).populate('criterion').populate('glossary_refs')
 
         // HTTP 200: OK (implicito)
         if (result) {
@@ -60,7 +60,7 @@ controller.retrieveOne = async (req, res) => {
 
 controller.update = async (req, res) => {
     try {
-        const result = await Assessment.findByIdAndUpdate(req.params.id, req.body)
+        const result = await Question.findByIdAndUpdate(req.params.id, req.body)
 
         // HTTP 200: OK (implicito)
         if (result) {
@@ -79,7 +79,7 @@ controller.update = async (req, res) => {
 
 controller.delete = async (req, res) => {
     try {
-        const result = await Assessment.findByIdAndDelete(req.params.id)
+        const result = await Question.findByIdAndDelete(req.params.id)
 
         // HTTP 200: OK (implicito)
         if (result) {

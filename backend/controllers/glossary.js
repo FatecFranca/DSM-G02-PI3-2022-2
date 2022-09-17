@@ -1,4 +1,4 @@
-const Assessment = require('../models/Assessment')
+const Glossary = require('../models/Glossary')
 
 const controller = {} // Objeto vazio
 
@@ -13,7 +13,7 @@ const controller = {} // Objeto vazio
 
 controller.create = async (req, res) => {
     try {
-        const result = await Assessment.create(req.body)
+        const result = await Glossary.create(req.body)
         // HTTP 201: Created
         res.status(200).send(result)
 
@@ -27,7 +27,7 @@ controller.create = async (req, res) => {
 controller.retrieveAll = async (req, res) => {
     try {
         // find() sem parametros retorna todos os documentos
-        const result = await Assessment.find().populate('user')
+        const result = await Glossary.find()
 
         // HTTP 200: OK (implicito)
         res.send(result)
@@ -41,7 +41,7 @@ controller.retrieveAll = async (req, res) => {
 
 controller.retrieveOne = async (req, res) => {
     try {
-        const result = await Assessment.findById(req.params.id).populate('user')
+        const result = await Glossary.findById(req.params.id)
 
         // HTTP 200: OK (implicito)
         if (result) {
@@ -60,7 +60,7 @@ controller.retrieveOne = async (req, res) => {
 
 controller.update = async (req, res) => {
     try {
-        const result = await Assessment.findByIdAndUpdate(req.params.id, req.body)
+        const result = await Glossary.findByIdAndUpdate(req.params.id, req.body)
 
         // HTTP 200: OK (implicito)
         if (result) {
@@ -79,7 +79,7 @@ controller.update = async (req, res) => {
 
 controller.delete = async (req, res) => {
     try {
-        const result = await Assessment.findByIdAndDelete(req.params.id)
+        const result = await Glossary.findByIdAndDelete(req.params.id)
 
         // HTTP 200: OK (implicito)
         if (result) {
