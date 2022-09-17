@@ -29,4 +29,7 @@ app.use('/user', userRoute)
 const assessmentRoute = require('./routes/assessment')
 app.use('/assessment', assessmentRoute)
 
+const criterionRoute = require('./routes/criterion')
+app.use('/criterion', criterionRoute)
+
 module.exports = app;
