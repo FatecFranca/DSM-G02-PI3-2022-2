@@ -41,7 +41,7 @@ controller.retrieveAll = async (req, res) => {
 
 controller.retrieveOne = async (req, res) => {
     try {
-        const result = await Question.findById(req.params.id)
+        const result = await Question.findById(req.params.id).populate('criterion').populate('glossary_refs')
 
         // HTTP 200: OK (implicito)
         if (result) {

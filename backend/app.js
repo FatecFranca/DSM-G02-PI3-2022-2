@@ -35,4 +35,7 @@ app.use('/criterion', criterionRoute)
 const questionRoute = require('./routes/question')
 app.use('/question', questionRoute)
 
+const glossaryRoute = require('./routes/glossary')
+app.use('/glossary', glossaryRoute)
+
 module.exports = app;
