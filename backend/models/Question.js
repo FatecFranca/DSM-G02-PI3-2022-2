@@ -1,17 +1,21 @@
 const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
+    criterion: {
+        type: mongoose.ObjectId,
+        ref: 'Criterion'
+    },
     order: {
         type: Number,
         required: true
     },
-    name: {
+    enunciation: {
         type: String,
         required: true
     },
-    description: {
-        type: String,
-        required: true
+    glossary_refs: {
+        type: mongoose.ObjectId,
+        ref: 'Glossary'
     }
 })
 
@@ -21,4 +25,4 @@ const schema = mongoose.Schema({
     2º - Relação de campos do esquema (schema)
     3º - Nome da collection no banco de dados (convenção: mesmo nome da model com letra inicial minúsculas e plural)
 */
-module.exports = mongoose.model('Criterion', schema, 'criterions')
+module.exports = mongoose.model('Question', schema, 'questions')
