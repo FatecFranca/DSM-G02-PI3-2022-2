@@ -13,10 +13,10 @@ const schema = mongoose.Schema({
         type: String,
         required: true
     },
-    glossary_refs: {
+    glossary_refs: [{
         type: mongoose.ObjectId,
         ref: 'Glossary'
-    }
+    }]
 })
 
 /*
