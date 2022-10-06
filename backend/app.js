@@ -38,4 +38,7 @@ app.use('/question', questionRoute)
 const glossaryRoute = require('./routes/glossary')
 app.use('/glossary', glossaryRoute)
 
+const answerRoute = require('./routes/answer')
+app.use('/answer', answerRoute)
+
 module.exports = app;
