@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const Answer = require('./Answer')
 
 const schema = mongoose.Schema({
     // Campo de chave estrangeira para o model User
@@ -26,10 +27,7 @@ const schema = mongoose.Schema({
     finished_at: {
         type: Date
     },
-    answers: [{
-        type: Object,
-        ref: 'Answer'
-    }]
+    answers: [Answer]
 })
 
 /*
