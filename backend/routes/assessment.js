@@ -11,7 +11,7 @@ router.delete('/:id', controller.delete)
 /* rotas para answer */
 router.post('/:assessment_id/answer', controller.createAnswer)
 router.get('/:assessment_id/answer', controller.retrieveAllAnswers)
-//router.get('/:assessment_id/answer/:id', controller.retrieveOneAnswer)
+router.get('/:assessment_id/answer/:id', controller.retrieveOneAnswer)
 //router.patch('/:assessment_id/answer/:id', controller.updateAnswer)
 //router.delete('/:assessment_id/answer/:id', controller.deleteAnswer)
 

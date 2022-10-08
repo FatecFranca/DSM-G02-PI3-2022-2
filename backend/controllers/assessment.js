@@ -92,10 +92,11 @@ controller.createAnswer = async (req, res) => {
 
                 // 2.1) Verifica se uma resposta para a pergunta
                 // especificada já existe no vetor
-                const idx = assessment.answers.findIndex(a => a.question === req.body.question)
+                const idx = assessment.answers.findIndex(a => a.question.toString() === req.body.question)
                 if (idx >= 0) {
                     // Já existe uma resposta para a pergunta no vetor "answers"
                     assessment.answers[idx] = req.body
+                    console.log('Atualizando resposta existente')
                 }
                 else {
                     // Insere a resposta (req.body) no vetor "answers"
@@ -130,8 +131,7 @@ controller.createAnswer = async (req, res) => {
 
 controller.retrieveAllAnswers = async (req, res) => {
     try {
-        const assessment = await Assessment.findById(req.params.assessment_id)
-        //.populate({ path: 'answers', populate: { path: 'question' } })
+        const assessment = await Assessment.findById(req.params.assessment_id).populate({ path: 'answers', populate: { path: 'question' } })
         console.log(assessment)
         // HTTP 200: OK (implícito)
         if (assessment) res.status(200).send(assessment.answers)
@@ -140,6 +140,30 @@ controller.retrieveAllAnswers = async (req, res) => {
     }
     catch (error) {
         console.error(error)
+        // HTTP 500: Internal Server Error
+        res.status(500).send(error)
+    }
+}
+
+controller.retrieveOneAnswer = async (req, res) => {
+    try {
+        console.log(req.params.id)
+        const assessment = await Assessment.findById(req.params.assessment_id)
+        console.log(assessment)
+        if (assessment) {
+            const result = assessment.answers.id(req.params.id)
+            if (result) {
+                res.send(result)
+            }
+            // HTTP 200: OK
+
+        }
+        else {
+            // HTTP 404: Not Found
+            res.status(404).end()
+        }
+    } catch {
+        onsole.error(error)
         // HTTP 500: Internal Server Error
         res.status(500).send(error)
     }
