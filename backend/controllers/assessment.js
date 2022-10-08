@@ -1,5 +1,4 @@
 const Assessment = require('../models/Assessment')
-const Answer = require('../models/Answer')
 
 const controller = {}   // Objeto vazio
 
