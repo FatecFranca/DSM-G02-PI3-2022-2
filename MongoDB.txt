@@ -1,0 +1,13 @@
+Mongo DB: 
+
+query:
+Consulta simples
+
+aggregations:
+$lookup -> "join" (juntar várias coisas)
+
+
+
+$unwind: modificar as saídas de dados
+
+$match: consulta (filtro)
