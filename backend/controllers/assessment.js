@@ -1,24 +1,16 @@
 const Assessment = require('../models/Assessment')
+const Answer = require('../models/Answer')
 
-const controller = {} // Objeto vazio
-
-/*
-    Métodos de CRUD do controller
-    create: cria um novo registro
-    retrieve: recupera todos os registros
-    rerieveOne: recupera um único registro
-    update: atualiza os dados de um registro
-    delete: exclui um registro
-*/
+const controller = {}   // Objeto vazio
 
 controller.create = async (req, res) => {
     try {
-        const result = await Assessment.create(req.body)
+        await Assessment.create(req.body)
         // HTTP 201: Created
-        res.status(200).send(result)
-
-    } catch (error) {
-        console.log(error)
+        res.status(201).end()
+    }
+    catch (error) {
+        console.error(error)
         // HTTP 500: Internal Server Error
         res.status(500).send(error)
     }
@@ -26,14 +18,14 @@ controller.create = async (req, res) => {
 
 controller.retrieveAll = async (req, res) => {
     try {
-        // find() sem parametros retorna todos os documentos
-        const result = await Assessment.find().populate('user').populate('answers')
-
-        // HTTP 200: OK (implicito)
+        // find() sem parâmetros retorna todos os documentos
+        // da coleção
+        const result = await Assessment.find().populate('user')
+        // HTTP 200: OK (implícito)
         res.send(result)
-
-    } catch (error) {
-        console.log(error)
+    }
+    catch (error) {
+        console.error(error)
         // HTTP 500: Internal Server Error
         res.status(500).send(error)
     }
@@ -41,18 +33,15 @@ controller.retrieveAll = async (req, res) => {
 
 controller.retrieveOne = async (req, res) => {
     try {
-        const result = await Assessment.findById(req.params.id).populate('user')
+        const result = await Assessment.findById(req.params.id)
 
-        // HTTP 200: OK (implicito)
-        if (result) {
-            res.send(result)
-        } else {
-            // HTTP 404: Not Found
-            res.status(404).end()
-        }
-
-    } catch (error) {
-        console.log(error)
+        // HTTP 200: OK (implícito)
+        if (result) res.send(result)     // Encontrou o documento
+        // HTTP 404: Not Found
+        else res.status(404).end()      // Não encontrou
+    }
+    catch (error) {
+        console.error(error)
         // HTTP 500: Internal Server Error
         res.status(500).send(error)
     }
@@ -62,16 +51,12 @@ controller.update = async (req, res) => {
     try {
         const result = await Assessment.findByIdAndUpdate(req.params.id, req.body)
 
-        // HTTP 200: OK (implicito)
-        if (result) {
-            res.status(200).send(result)
-        } else {
-            // HTTP 404: Not Found
-            res.status(404).end()
-        }
-
-    } catch (error) {
-        console.log(error)
+        // HTTP 204: No content
+        if (result) return res.status(204).end() // Encontrou e atualizou
+        else res.status(404).end()      // Não encontrou
+    }
+    catch (error) {
+        console.error(error)
         // HTTP 500: Internal Server Error
         res.status(500).send(error)
     }
@@ -81,20 +66,84 @@ controller.delete = async (req, res) => {
     try {
         const result = await Assessment.findByIdAndDelete(req.params.id)
 
-        // HTTP 200: OK (implicito)
-        if (result) {
-            res.status(200).send(result)
-        } else {
-            // HTTP 404: Not Found
-            res.status(404).end()
-        }
+        // HTTP 204: No content
+        if (result) res.status(204).end()    // Encontrou e excluiu
+        else res.status(404).end()          // Não encontrou
+    }
+    catch (error) {
+        console.error(error)
+        // HTTP 500: Internal Server Error
+        res.status(500).send(error)
+    }
+}
 
-    } catch (error) {
-        console.log(error)
+/*******************************************************************
+ * Métodos para o model Answer
+*/
+
+controller.createAnswer = async (req, res) => {
+    try {
+        // 1) Encontra a avaliação (assessment) por meio do parâmetro
+        // :assessment_id
+        const assessment = await Assessment.findById(req.params.assessment_id)
+
+        if (assessment) {
+            // 2) Verifica se o campo "answers" já existe na avaliação
+            if (assessment.answers) {
+
+                // 2.1) Verifica se uma resposta para a pergunta
+                // especificada já existe no vetor
+                const idx = assessment.answers.findIndex(a => a.question === req.body.question)
+                if (idx >= 0) {
+                    // Já existe uma resposta para a pergunta no vetor "answers"
+                    assessment.answers[idx] = req.body
+                }
+                else {
+                    // Insere a resposta (req.body) no vetor "answers"
+                    assessment.answers.push(req.body)
+                }
+            }
+            else {
+                // Cria o vetor "answers" com o primeiro elemento
+                assessment.answers = [req.body]
+            }
+
+            // Atualiza assessment
+            const result = await Assessment.findByIdAndUpdate(
+                req.params.assessment_id,
+                assessment
+            )
+
+            // HTTP 204: No content
+            if (result) return res.status(200).send(assessment.answers) // Encontrou e atualizou
+            else res.status(404).end()      // Não encontrou
+
+        }
+        // HTTP 404: Not Found
+        else res.status(404).end()
+    }
+    catch (error) {
+        console.error(error)
+        // HTTP 500: Internal Server Error
+        res.status(500).send(error)
+    }
+}
+
+controller.retrieveAllAnswers = async (req, res) => {
+    try {
+        const assessment = await Assessment.findById(req.params.assessment_id)
+        //.populate({ path: 'answers', populate: { path: 'question' } })
+        console.log(assessment)
+        // HTTP 200: OK (implícito)
+        if (assessment) res.status(200).send(assessment.answers)
+        // HTTP 404: Not Found
+        else res.status(404).end()
+    }
+    catch (error) {
+        console.error(error)
         // HTTP 500: Internal Server Error
         res.status(500).send(error)
     }
 }
 
 module.exports = controller
-

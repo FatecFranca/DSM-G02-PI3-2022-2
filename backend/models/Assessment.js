@@ -1,15 +1,17 @@
 const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
+    // Campo de chave estrangeira para o model User
     user: {
-        type: mongoose.ObjectId, // CAMPO DE CHAVE ESTRANGEIRA PARA OUTRA MODEL
-        ref: 'User', // REFERENCIA A MODEL
+        type: mongoose.ObjectId, // Tipo especial
+        ref: 'User',    // Coleção referenciada
+        required: true
     },
     name: {
         type: String,
-        required: true,
+        required: true
     },
-    Object: {
+    object: {
         type: String,
         required: true
     },
@@ -19,21 +21,24 @@ const schema = mongoose.Schema({
     created_at: {
         type: Date,
         required: true,
-        default: Date.now // Data e hora atual
+        default: Date.now() // Data/hora atual
     },
     finished_at: {
         type: Date
     },
     answers: [{
-        type: mongoose.ObjectId,
+        type: Object,
         ref: 'Answer'
     }]
 })
 
 /*
     Parâmetros de mongoose.model:
-    1º - Nome da model, para uso interno (convenção: primeira letra maiúscula e singular)
-    2º - Relação de campos do esquema (schema)
-    3º - Nome da collection no banco de dados (convenção: mesmo nome da model com letra inicial minúsculas e plural)
+    1º: o nome do model, para uso interno. Por convenção,
+        usa-se Inicial Maiúscula.
+    2º: a relação de campos do esquema (variável schema)
+    3º: o nome da collection no banco de dados (normalmente,
+        é o mesmo nome do model, mas pluralizado e com
+        inicial minúscula)
 */
 module.exports = mongoose.model('Assessment', schema, 'assessments')
