@@ -6,7 +6,8 @@ const schema = mongoose.Schema({
     user: {
         type: mongoose.ObjectId, // Tipo especial
         ref: 'User',    // Coleção referenciada
-        required: true
+        required: true,
+        index: true
     },
     name: {
         type: String,
@@ -22,7 +23,8 @@ const schema = mongoose.Schema({
     created_at: {
         type: Date,
         required: true,
-        default: Date.now() // Data/hora atual
+        default: Date.now(), // Data/hora atual
+        index: true
     },
     finished_at: {
         type: Date

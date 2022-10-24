@@ -169,4 +169,54 @@ controller.retrieveOneAnswer = async (req, res) => {
     }
 }
 
+controller.updateAnswer = async (req, res) => {
+    try {
+        const assessment = await Assessment.findById(req.params.assessment_id)
+        const assessmentAnswer = assessment.answers.id(req.params.id)
+        if (assessment && assessmentAnswer) {
+            // Atualiza os campos da resposta
+            assessmentAnswer.question = req.body.question
+            assessmentAnswer.answer = req.body.answer
+            assessmentAnswer.comment = req.body.comment
+            assessmentAnswer.answered_at = req.body.answered_at
+
+            // Marca o campo "answers" como modificado
+            assessment.markModified('answers')
+
+            await assessment.save()
+
+            // HTTP 204: No content
+            res.status(200).send()
+        }
+
+    } catch {
+        onsole.error(error)
+        // HTTP 500: Internal Server Error
+        res.status(500).send(error)
+    }
+}
+
+controller.deleteAnswer = async (req, res) => {
+    try {
+        const assessment = await Assessment.findById(req.params.assessment_id)
+        const assessmentAnswer = assessment.answers.id(req.params.id)
+        if (assessment && assessmentAnswer) {
+            // Exclui o subdocumento relativo à resposta
+            assessmentAnswer.remove()
+
+            // Marca o campo "answers" como modificado
+            assessment.markModified('answers')
+            await assessment.save()
+
+            // HTTP 204: No content
+            res.status(200).send()
+        }
+
+    } catch {
+        onsole.error(error)
+        // HTTP 500: Internal Server Error
+        res.status(500).send(error)
+    }
+}
+
 module.exports = controller

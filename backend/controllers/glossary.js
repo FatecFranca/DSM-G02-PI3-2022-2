@@ -27,7 +27,7 @@ controller.create = async (req, res) => {
 controller.retrieveAll = async (req, res) => {
     try {
         // find() sem parametros retorna todos os documentos
-        const result = await Glossary.find()
+        const result = await Glossary.find().sort({ entry: 1 })
 
         // HTTP 200: OK (implicito)
         res.send(result)
