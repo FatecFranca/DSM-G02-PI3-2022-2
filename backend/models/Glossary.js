@@ -3,7 +3,8 @@ const mongoose = require('mongoose')
 const schema = mongoose.Schema({
     entry: {
         type: String,
-        required: true
+        required: true,
+        index: true
     },
     description: {
         type: String,

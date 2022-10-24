@@ -3,11 +3,13 @@ const mongoose = require('mongoose')
 const schema = mongoose.Schema({
     criterion: {
         type: mongoose.ObjectId,
-        ref: 'Criterion'
+        ref: 'Criterion',
+        index: true
     },
     order: {
         type: Number,
-        required: true
+        required: true,
+        index: true
     },
     enunciation: {
         type: String,

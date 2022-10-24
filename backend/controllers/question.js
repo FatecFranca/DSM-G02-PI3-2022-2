@@ -26,8 +26,15 @@ controller.create = async (req, res) => {
 
 controller.retrieveAll = async (req, res) => {
     try {
-        // find() sem parametros retorna todos os documentos
-        const result = await Question.find().populate('criterion').populate('glossary_refs')
+        let result
+        // Se existir "criterion" no queryString
+        if (req.query.criterion) {
+            // Retorna só as questões de um critério, ordenadas pelo campo order, ascendente
+            result = await Question.find({ criterion: req.query.criterion }).populate('criterion').populate('glossary_refs').sort({ order: 1 })
+        } else {
+            // Retorna todas as questões, na ordem natural do banco de dados
+            result = await Question.find().populate('criterion').populate('glossary_refs')
+        }
 
         // HTTP 200: OK (implicito)
         res.send(result)

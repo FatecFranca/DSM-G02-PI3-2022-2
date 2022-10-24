@@ -4,7 +4,8 @@ const schema = mongoose.Schema({
     question: {
         type: mongoose.ObjectId,
         ref: 'Question',
-        required: true
+        required: true,
+        index: true
     },
     /*
         Valores possíveis para o campo "answer":
