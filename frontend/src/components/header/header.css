@@ -1,0 +1,62 @@
+/* CSS NAV */
+.nav {
+    background: #202024;
+    position: absolute;
+    width: 1380px;
+    height: 76px;
+    left: 0px;
+    top: 0px;
+}
+
+.list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+    width: 48px;
+    height: 19px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    padding: 30px;
+    text-decoration: none;
+}
+
+.l1 {
+    position: absolute;
+    width: 120px;
+    height: 22px;
+    left: 113px;
+    top: 29px;
+    text-decoration: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 22px;
+
+    color: #C1D3FF;
+}
+
+.logo {
+    position: absolute;
+    width: 62.22px;
+    height: 56px;
+    left: 28px;
+    top: 12px;
+
+}
+
+.icone {
+    position: absolute;
+    width: 50.2px;
+    height: 52px;
+    left: 1290px;
+    top: 12px;
+}
+
