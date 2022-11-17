@@ -13,7 +13,7 @@ export default function Header() {
           <img className="logo" src={Logo} />
 
           <li>
-            <Link className="l1" to="/">
+            <Link className="l1" to="/Login">
               ErgonAssess
             </Link>
           </li>
