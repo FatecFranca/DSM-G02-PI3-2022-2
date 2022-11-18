@@ -1,0 +1,39 @@
+.avaliar-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 12px;
+
+    position: absolute;
+    width: 400px;
+    height: 41px;
+    left: 46px;
+    top: 149px;
+    background: #202024;
+    border-radius: 4px;
+}
+
+.segmento-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 12px;
+
+    position: absolute;
+    width: 400px;
+    height: 41px;
+    left: 46px;
+    top: 235px;
+    background: #202024;
+    border-radius: 4px;
+}
+
+.gg {
+    position: absolute;
+    width: 465.23px;
+    height: 359px;
+    left: 781px;
+    top: 269px;
+}

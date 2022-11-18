@@ -7,15 +7,14 @@ var logger = require('morgan');
 var cors = require('cors')
 
 var indexRouter = require('./routes/index');
-
+var app = express();
 app.use((req, res, next) => {
     //console.log("Acessou o Middelare")
-    res.header("Access-Control-Allow-Origin","http://localhost:3000")
+    res.header("Access-Control-Allow-Origin","http://127.0.0.1:5173")
     app.use(cors());
     next();
 })
 
-var app = express();
 
 // Conexão com o banco de dados remoto
 const connectDb = require('./config/database')
