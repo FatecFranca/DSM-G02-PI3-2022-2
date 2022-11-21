@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import logoacesso from "../../img/logolacesso.png";
+import axios from "axios"
 import * as yup from "yup";
 
 import "./login.css";
@@ -14,14 +15,11 @@ const schema = yup
       .string()
       .email("Digite um email válido")
       .required("O email é obrigatório"),
-    password: yup
+    password_hash: yup
       .string()
       .min(6, "A senha deve ter pelo menos 6 digitos")
       .required("A senha é obrigatória"),
-    confirmPassword: yup
-      .string()
-      .required("Confirmar a senha é obrigatório")
-      .oneOf([yup.ref("password")], "As senhas devem ser iguais"),
+
   })
   .required();
 export default function Login() {
@@ -39,13 +37,21 @@ export default function Login() {
   function onSubmit(userData) {
     console.log(userData);
     window.alert("Acesso Liberado");
-    <input type="hidden" name="_next" value="http:localhost:3000/Home" />;
+
+
   }
+  const addPost = data => axios.post("http://localhost:3001/user", data)
+  .then(() => {
+    console.log("deu certo")
+  })
+  .catch(() => {
+    console.log("deu errado")
+  })
 
   return (
     <div className="app">
       <div className='form'>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(addPost)}>
           <img src={logoacesso} />
           <h1>Ergon Aceess</h1>
           <label>
@@ -62,15 +68,11 @@ export default function Login() {
 
           <label>
             Senha
-            <input type="password" {...register("password")} />
-            <span>{errors.password?.message}</span>
+            <input type="password" {...register("password_hash")} />
+            <span>{errors.password_hash?.message}</span>
           </label>
 
-          <label>
-            Confirmar Senha
-            <input type="password" {...register("confirmPassword")} />
-            <span>{errors.confirmPassword?.message}</span>
-          </label>
+        
 
           <button type="submit" name="_next" value="http:localhost:3000/Home">
             Realizar Acesso Para Avaliar
