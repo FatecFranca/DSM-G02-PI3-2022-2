@@ -11,7 +11,7 @@ const {
 } = process.env
 
 module.exports = function () {
-    mongoose.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PASS}@${MONGODB_SERVER}/${MONGODB_DATABASE}?retryWrites=true&w=majority`, {
+    mongoose.connect(`mongodb+srv://Vinicius:4321@cluster0.vup6jl0.mongodb.net/?retryWrites=true&w=majority`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
