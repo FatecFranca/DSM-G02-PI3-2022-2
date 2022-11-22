@@ -56,26 +56,26 @@ export default function Login() {
           <h1>Ergon Aceess</h1>
           <label>
             Nome
-            <input type="text" {...register("name", { required: true })} />
+            <input type="text" placeholder="Digite seu Nome"{...register("name", { required: true })} />
             <span>{errors.name?.message}</span>
           </label>
 
           <label>
             Email
-            <input type="text" {...register("email")} />
+            <input type="text" placeholder="Digite seu Email"{...register("email")} />
             <span>{errors.email?.message}</span>
           </label>
 
           <label>
             Senha
-            <input type="password" {...register("password_hash")} />
+            <input type="password" placeholder="Digite sua senha"{...register("password_hash")} />
             <span>{errors.password_hash?.message}</span>
           </label>
 
         
 
           <button type="submit" name="_next" value="http:localhost:3000/Home">
-            Realizar Acesso Para Avaliar
+            Entrar
           </button>
         </form>
       </div>

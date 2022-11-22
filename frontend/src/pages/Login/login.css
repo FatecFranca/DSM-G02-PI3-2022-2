@@ -1,5 +1,6 @@
 
 h1{
+  color: #C1D3FF;
     margin-bottom: -50px;
 }
 form {
@@ -12,7 +13,7 @@ form {
   gap: 50px;
 }
 .form{
-    background-color: cadetblue;
+    background-color:#121214;
     
 }
 img{
@@ -23,13 +24,15 @@ label {
   display: flex;
   flex-direction: column;
   margin-bottom: -25px;
+  color: white;
 }
 
 input {
-  border-radius: 5px;
-  border: 1px solid gray;
+
   height: 25px;
   width: 300px;
+  background: #202024;
+  border-radius: 4px;
 }
 
 button {
