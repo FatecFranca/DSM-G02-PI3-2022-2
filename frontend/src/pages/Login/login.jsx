@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Navigate, useNavigate } from "react-router-dom";
 import logoacesso from "../../img/logolacesso.png";
 import axios from "axios"
 import * as yup from "yup";
@@ -40,13 +41,19 @@ export default function Login() {
 
 
   }
+  let navigate = useNavigate()
+
   const addPost = data => axios.post("http://localhost:3001/user", data)
   .then(() => {
-    console.log("deu certo")
+    console.log("Cadastro de usuario realizado com sucesso")
+    window.alert("Acesso Liberado");
+    navigate('/Home')
   })
   .catch(() => {
-    console.log("deu errado")
+    console.log("Error!")
   })
+
+
 
   return (
     <div className="app">
@@ -74,7 +81,7 @@ export default function Login() {
 
         
 
-          <button type="submit" name="_next" value="http:localhost:3000/Home">
+          <button type="submit" name="_next">
             Entrar
           </button>
         </form>
