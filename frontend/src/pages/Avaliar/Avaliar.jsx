@@ -12,6 +12,7 @@ export default function Questoes() {
   const [quest, setQuest] = useState([])
 
   useEffect(() => {
+   
     axios.get("http://localhost:3001/question")
       .then((response) => {
         setQuest(response.data)
@@ -27,43 +28,18 @@ export default function Questoes() {
       <Header />
       {quest.map((quest, key) => {
 
-
+        <br />
         return (
-          <div className="avaliar" key={key}>
-
+          <div className="container-box" key={key}>
             
-            <div className="tabela">
-              <table class="table table-dark">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Questao:{quest.enunciation}</th>
-                    <th scope="col">Handle</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <div className="index">
+              <p>{quest.criterion.name}</p>
+            </div>            
+            <div className="quest"><p>{quest.enunciation}</p></div>
+            <div class='button' id='next'><a href='#'>SIM</a></div>
+            <div class='button' id='prev'><a href='#'>NÃO</a></div>
+            <div class='button' id='start'> <a href='#'>NÃO APLICÁVEL</a></div>
+            
           </div>
         )
       })}
@@ -71,5 +47,3 @@ export default function Questoes() {
     </div>
   );
 };
-
-
