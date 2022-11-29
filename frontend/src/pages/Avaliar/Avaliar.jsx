@@ -61,7 +61,6 @@ export default function Questoes() {
       <Header />
       {quest.map((quest, key) => {
 
-<<<<<<< HEAD
         return (
           <div className="app" key={key}>
             <div className="form" >
@@ -85,20 +84,6 @@ export default function Questoes() {
 
             </div>
 
-=======
-        <br />
-        return (
-          <div className="container-box" key={key}>
-            
-            <div className="index">
-              <p>{quest.criterion.name}</p>
-            </div>            
-            <div className="quest"><p>{quest.enunciation}</p></div>
-            <div class='button' id='next'><a href='#'>SIM</a></div>
-            <div class='button' id='prev'><a href='#'>NÃO</a></div>
-            <div class='button' id='start'> <a href='#'>NÃO APLICÁVEL</a></div>
-            
->>>>>>> c2864610755c72aa74636d751758353cba180c4a
           </div>
         )
       })}
