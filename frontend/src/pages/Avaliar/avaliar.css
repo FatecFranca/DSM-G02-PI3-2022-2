@@ -1,0 +1,70 @@
+<<<<<<< HEAD
+=======
+/* .container-box .index .quest{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 12px;
+
+    position: absolute;
+    width: 400px;
+    height: 41px;
+    left: 46px;
+    top: 149px;
+    background: #202024;
+    border: #0909c2;
+    border-radius: 4px;
+
+} */
+
+.container-box {
+    width:50%;
+    margin:auto;
+    padding: 0 25px 40px 10px;
+    background-color: #1E90FF;
+    border:4px solid #B0E0E6;
+    border-radius:5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px #888;   
+}
+
+
+
+
+/* .segmento-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 12px;
+
+    position: absolute;
+    width: 400px;
+    height: 41px;
+    left: 46px;
+    top: 235px;
+    background: #202024;
+    border-radius: 4px;
+} */
+/* 
+.gg {
+    position: absolute;
+    width: 465.23px;
+    height: 359px;
+    left: 781px;
+    top: 269px;
+} */
+p{
+    color: white;
+}
+/* 
+#buttons-answer .button-box {
+    position: absolute;
+    left: 3.51%;
+    right: 61.34%;
+    top: 7.13%;
+    bottom: 7.13%;
+} */
+>>>>>>> c2864610755c72aa74636d751758353cba180c4a
