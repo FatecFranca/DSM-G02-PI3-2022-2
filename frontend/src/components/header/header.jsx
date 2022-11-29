@@ -9,31 +9,31 @@ export default function Header() {
   return (
     <div className="nav">
       <nav>
-        <ul className="list">
+        <ul className="lista-nav">
           <img className="logo" src={Logo} />
 
           <li>
-            <Link className="l1" to="/Login">
+            <Link className="login-teto" to="/Login">
               ErgonAssess
             </Link>
           </li>
           <li>
-            <Link className="link" to="/Home">
+            <Link className="link-nav" to="/Home">
               HOME
             </Link>
           </li>
           <li>
-            <Link className="link" to="/Sobre">
+            <Link className="link-nav" to="/Sobre">
               SOBRE
             </Link>
           </li>
           <li>
-            <Link className="link" to="/Avaliar">
+            <Link className="link-nav" to="/Avaliar">
               AVALIAR
             </Link>
           </li>
           <li>
-            <Link className="link" to="/Glossario">
+            <Link className="link-nav" to="/Glossario">
               GLOSSARIO
             </Link>
           </li>
