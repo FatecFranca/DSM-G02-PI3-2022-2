@@ -59,31 +59,39 @@ export default function Questoes() {
   return (
     <div className="app">
       <Header />
-      <br /><br /><br /><br />
-      <h1>Avaliações</h1>
+      
+      <div>
+        <p></p>
+      </div>
+    
+      <div>
+        <h1>avaliar</h1>
+      </div>
+      <div>
+        <h1>Avaliações</h1>
+      </div>
+
       {quest.map((quest, key) => {
+  
+
         return (
-          <div className="app" key={key}>
-            <div className="form" >
-              <form onSubmit={handleSubmit(addPost)}>
-
-                <label>
-                  <p>Questão ({quest._id}): <br></br>{quest.enunciation}</p>
-
-                  <input placeholder="Resposta"{...register("answer", { required: true })} />
-                  <input type="text" placeholder="Digite um comentario"{...register("comment")} />
-                  <input type="hidden" value={quest._id} {...register("question")} />
-
-                </label>
-
-                <button type="submit" name="_next">
-                  Enviar Respostas
-                </button>
-              </form>
-
+        
+            <div className="app" key={key}>
+              <div >
+                <form  className="forms" onSubmit={handleSubmit(addPost)}>
+                  <label className="labelavaliar">
+                    <p>Questão: {quest.enunciation}</p>
+                    <input className="input-avaliar" type="text" placeholder="complete com a sua resposta"{...register("answer", { required: true })} />
+                    <input className="input-avaliar" type="text" placeholder="Digite um comentario"{...register("comment")} />
+                    <input className="input-avaliar" type="text" placeholder="Digite o id da pergunta"{...register("question")} />
+                  </label>
+                  <button className="button-avaliar"type="submit" name="_next">
+                    Enviar Respostas
+                  </button>
+                </form>
+              </div>
             </div>
-
-          </div>
+          
         )
       })}
 

@@ -17,7 +17,6 @@
     height: 44px;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 700;
     font-size: 36px;
     line-height: 44px;
     /* identical to box height */
@@ -25,15 +24,16 @@
 
 }
 
-.volt {
+.logo-voltar {
     position: absolute;
     width: 32px;
     height: 32px;
-    left: 97px;
+    left: 17px;
     top: -50px;
+    
 }
 
-.boks {
+.logo-boks{
     width: 50px;
     height: 50px;
 }
@@ -58,26 +58,27 @@
 
 }
 
-.cri {
+.sobre-button{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 12px 16px;
     gap: 10px;
-
     position: absolute;
     width: 193px;
     height: 43px;
     left: 100px;
     top: 429px;
-
     background: #A6E8FF;
     border-radius: 4px;
 
 }
-
-.ter {
+.link-sobre{
+    text-decoration: none;
+    color: black;
+}
+.termos-button{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -93,7 +94,7 @@
     border-radius: 4px;
 }
 
-.in {
+.input-pesquisa{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -110,19 +111,20 @@
     border-radius: 4px;
 }
 
-.cont {
+.informacao{
     position: absolute;
     width: 1131px;
     height: 765px;
     left: 100px;
     top: 523px;
-
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 800;
     font-size: 14px;
     line-height: 17px;
     text-align: justify;
-
     color: #FFFFFF;
+}
+.seta{
+    width: 32px;
+    color: white;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../components/header/header";
 import fotosobre from "../../img/sobreimg.png"
 
+
 import "./sobre.css";
 
 //Pagina Sobre da Aplicação
