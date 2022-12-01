@@ -44,44 +44,42 @@ export default function Login() {
   let navigate = useNavigate()
 
   const addPost = data => axios.post("http://localhost:3001/user", data)
-  .then(() => {
-    console.log("Cadastro de usuario realizado com sucesso")
-    window.alert("Acesso Liberado");
-    navigate('/Home')
-  })
-  .catch(() => {
-    console.log("Error!")
-  })
+    .then(() => {
+      console.log("Cadastro de usuario realizado com sucesso")
+      window.alert("Acesso Liberado");
+      navigate('/Home')
+    })
+    .catch(() => {
+      console.log("Error!")
+    })
 
 
 
   return (
     <div className="app">
-      <div className='form'>
-        <form onSubmit={handleSubmit(addPost)}>
-          <img src={logoacesso} />
-          <h1>Ergon Aceess</h1>
-          <label>
+      <div className="form">
+        <form className="formulario" onSubmit={handleSubmit(addPost)}>
+          <img className="logologin" src={logoacesso} />
+          <h1 className="tittlelogin">Ergon Aceess</h1>
+          <label className="loginlabel">
             Nome
-            <input type="text" placeholder="Digite seu Nome"{...register("name", { required: true })} />
-            <span>{errors.name?.message}</span>
+            <input className="input-login" type="text" placeholder="Digite seu Nome"{...register("name", { required: true })} />
+            <span className="error-span">{errors.name?.message}</span>
           </label>
 
-          <label>
+          <label className="loginlabel">
             Email
-            <input type="text" placeholder="Digite seu Email"{...register("email")} />
-            <span>{errors.email?.message}</span>
+            <input className="input-login" type="text" placeholder="Digite seu Email"{...register("email")} />
+            <span className="error-span">{errors.email?.message}</span>
           </label>
 
-          <label>
+          <label className="loginlabel">
             Senha
-            <input type="password" placeholder="Digite sua senha"{...register("password_hash")} />
-            <span>{errors.password_hash?.message}</span>
+            <input className="input-login" type="password" placeholder="Digite sua senha"{...register("password_hash")} />
+            <span className="error-span">{errors.password_hash?.message}</span>
           </label>
 
-        
-
-          <button type="submit" name="_next">
+          <button className="button-login" type="submit" name="_next">
             Entrar
           </button>
         </form>

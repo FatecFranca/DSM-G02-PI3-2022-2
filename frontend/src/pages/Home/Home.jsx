@@ -1,5 +1,7 @@
 import React from "react";
+import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
+
 import "./home.css";
 
 //Pagina Home da Aplicação
@@ -7,7 +9,6 @@ export default function Home() {
   return (
     <div className="app">
       <Header />
-
       <div className="Inicio">
         <h1 className="h">Minhas Atividades</h1>
         <button className="salv">Nova Avaliação</button>
@@ -20,5 +21,6 @@ export default function Home() {
       
       </div>
     </div>
+    
   );
 }

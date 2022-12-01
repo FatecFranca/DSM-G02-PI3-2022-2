@@ -1,9 +1,8 @@
-
-h1{
-  color: #C1D3FF;
-    margin-bottom: -50px;
+.form {
+  background-color: #121214;
 }
-form {
+
+.formulario {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -12,21 +11,24 @@ form {
   align-items: center;
   gap: 50px;
 }
-.form{
-    background-color:#121214; 
-}
-img{
-    margin-bottom: -40px;
+
+.tittlelogin {
+  color: #C1D3FF;
+  margin-bottom: -50px;
 }
 
-label {
+.logologin {
+  margin-bottom: -40px;
+}
+
+.loginlabel {
   display: flex;
   flex-direction: column;
   margin-bottom: -25px;
   color: white;
 }
 
-input {
+.input-login {
 
   height: 25px;
   width: 300px;
@@ -34,7 +36,7 @@ input {
   border-radius: 4px;
 }
 
-button {
+.button-login {
   width: 300px;
   height: 40px;
   background-color: aqua;
@@ -44,8 +46,8 @@ button {
   cursor: pointer;
 }
 
-span {
+.error-span {
   color: red;
-  position:absolute;
+  position: absolute;
   margin-top: 50px;
 }
