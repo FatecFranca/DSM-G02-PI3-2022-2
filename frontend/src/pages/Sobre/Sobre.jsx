@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../components/Header/header";
+import Header from "../../components/header/header";
 import fotosobre from "../../img/sobreimg.png"
 
 import "./sobre.css";
@@ -31,7 +31,7 @@ export default function Sobre() {
           ante dictum sem condimentum ullamcorper quis venenatis nisi. Proin
           vitae facilisis nisi, ac posuere leo.
         </p>
-        <img src={fotosobre}/>
+        <img src={fotosobre} />
       </div>
     </div>
   );

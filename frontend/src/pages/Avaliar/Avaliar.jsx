@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Header from "../../components/Header/header";
+import Header from "../../components/header/header";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -15,9 +15,9 @@ const schema = yup
   .object({
     question: yup.string(),
     answer: yup
-    .string(),
+      .string(),
     comment: yup
-    .string()
+      .string()
   })
 
 export default function Questoes() {
@@ -35,7 +35,6 @@ export default function Questoes() {
   const [quest, setQuest] = useState([])
 
   useEffect(() => {
-   
     axios.get("http://localhost:3001/question")
       .then((response) => {
         setQuest(response.data)
@@ -47,33 +46,33 @@ export default function Questoes() {
       })
   }, [])
 
-  const addPost = data => axios.post("http://localhost:3001/assessment/637ec2e12affb96a174c85b2/answer", data)
+  const addPost = data => axios.post("http://localhost:3001/assessment/6340e4003feb7c46425ad26e/answer", data)
     .then(() => {
-
+      console.log(data)
       console.log("Cadastro de resposta completo")
 
     })
     .catch(() => {
+      console.log(data)
       console.log("Error!")
     })
   return (
     <div className="app">
       <Header />
+      <br /><br /><br /><br />
+      <h1>Avaliações</h1>
       {quest.map((quest, key) => {
-
         return (
           <div className="app" key={key}>
             <div className="form" >
               <form onSubmit={handleSubmit(addPost)}>
 
-                <h1>Avaliações</h1>
                 <label>
+                  <p>Questão ({quest._id}): <br></br>{quest.enunciation}</p>
 
-                  <p>Questão: {quest.enunciation}</p>
-
-                  <input type="text" placeholder="complete com a sua resposta"{...register("answer", { required: true })} />
+                  <input placeholder="Resposta"{...register("answer", { required: true })} />
                   <input type="text" placeholder="Digite um comentario"{...register("comment")} />
-                  <input type="text" placeholder="Digite o id da pergunta"{...register("question")} />
+                  <input type="hidden" value={quest._id} {...register("question")} />
 
                 </label>
 
