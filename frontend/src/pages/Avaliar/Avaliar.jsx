@@ -15,9 +15,9 @@ const schema = yup
   .object({
     question: yup.string(),
     answer: yup
-    .string(),
+      .string(),
     comment: yup
-    .string()
+      .string()
   })
 
 export default function Questoes() {
@@ -35,7 +35,7 @@ export default function Questoes() {
   const [quest, setQuest] = useState([])
 
   useEffect(() => {
-   
+
     axios.get("http://localhost:3001/question")
       .then((response) => {
         setQuest(response.data)
@@ -59,32 +59,39 @@ export default function Questoes() {
   return (
     <div className="app">
       <Header />
+      
+      <div>
+        <p></p>
+      </div>
+    
+      <div>
+        <h1>avaliar</h1>
+      </div>
+      <div>
+        <h1>Avaliações</h1>
+      </div>
+
       {quest.map((quest, key) => {
+  
 
         return (
-          <div className="app" key={key}>
-            <div className="form" >
-              <form onSubmit={handleSubmit(addPost)}>
-
-                <h1>Avaliações</h1>
-                <label>
-
-                  <p>Questão: {quest.enunciation}</p>
-
-                  <input type="text" placeholder="complete com a sua resposta"{...register("answer", { required: true })} />
-                  <input type="text" placeholder="Digite um comentario"{...register("comment")} />
-                  <input type="text" placeholder="Digite o id da pergunta"{...register("question")} />
-
-                </label>
-
-                <button type="submit" name="_next">
-                  Enviar Respostas
-                </button>
-              </form>
-
+        
+            <div className="app" key={key}>
+              <div >
+                <form  className="forms" onSubmit={handleSubmit(addPost)}>
+                  <label className="labelavaliar">
+                    <p>Questão: {quest.enunciation}</p>
+                    <input className="input-avaliar" type="text" placeholder="complete com a sua resposta"{...register("answer", { required: true })} />
+                    <input className="input-avaliar" type="text" placeholder="Digite um comentario"{...register("comment")} />
+                    <input className="input-avaliar" type="text" placeholder="Digite o id da pergunta"{...register("question")} />
+                  </label>
+                  <button className="button-avaliar"type="submit" name="_next">
+                    Enviar Respostas
+                  </button>
+                </form>
+              </div>
             </div>
-
-          </div>
+          
         )
       })}
 
