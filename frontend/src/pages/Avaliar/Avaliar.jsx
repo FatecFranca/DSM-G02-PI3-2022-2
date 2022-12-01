@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Header from "../../components/Header/header";
+import Header from "../../components/header/header";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -35,7 +35,6 @@ export default function Questoes() {
   const [quest, setQuest] = useState([])
 
   useEffect(() => {
-
     axios.get("http://localhost:3001/question")
       .then((response) => {
         setQuest(response.data)
@@ -47,13 +46,14 @@ export default function Questoes() {
       })
   }, [])
 
-  const addPost = data => axios.post("http://localhost:3001/assessment/637ec2e12affb96a174c85b2/answer", data)
+  const addPost = data => axios.post("http://localhost:3001/assessment/6340e4003feb7c46425ad26e/answer", data)
     .then(() => {
-
+      console.log(data)
       console.log("Cadastro de resposta completo")
 
     })
     .catch(() => {
+      console.log(data)
       console.log("Error!")
     })
   return (

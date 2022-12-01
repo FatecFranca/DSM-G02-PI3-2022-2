@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../components/Header/header";
+import Header from "../../components/header/header";
 import imgbooks from "../../img/Books.png";
 import imgvoltar from "../../img/voltar.png";
 import seta from "../../img/check.png";
