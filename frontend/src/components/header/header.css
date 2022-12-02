@@ -3,7 +3,7 @@
 .header {
     background: #202024;
     position: absolute;
-    width: 1380vh;
+    width: 1700px;
     height: 76px;
     left: 0px;
     top: 0px;
@@ -12,24 +12,25 @@
 .lista{
     list-style-type: none;
     display: flex;
-    justify-content: flex-start;
-    right: 200px;
+    justify-content:center;
+   
+   
     
 }
 
 .links{
-  
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 16px;
     line-height: 19px;
     color: #FFFFFF;
     padding: 50px;
     text-decoration: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    
 }
 
 .linkslogin {

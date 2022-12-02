@@ -1,45 +1,50 @@
-.forms {
-    height: 60vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-   
-}
+
 .labelavaliar{
     display: flex;
     flex-direction: column;
     margin-bottom: -25px;
     color: white;
+    text-align: center;
 }
 .input-avaliar{
-    height: 25px;
-    width: 300px;
+    height: 50px;
+    width: 500px;
     background: #202024;
-    border-radius: 4px;
+    border-radius: 50px;
+    color: aliceblue;
+    border-style: solid 
 }
-
 .button-avaliar {
     width: 300px;
-    height: 40px;
+    height: 50px;
     background-color: aqua;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
   }
+  .input-avaliar::placeholder{
+    color:dimgray;
+    text-align: center;
+  }
 
   p{
     color: white;
   }
-  h1{
-    color: aliceblue;
-  }
+
 
 .kkk{
+    height: 60vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 30px;
+    
 }
+.lal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    
