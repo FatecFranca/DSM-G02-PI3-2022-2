@@ -1,35 +1,38 @@
 /* CSS NAV */
-.nav {
+
+.header {
     background: #202024;
     position: absolute;
-    width: 1380px;
+    width: 1380vh;
     height: 76px;
     left: 0px;
     top: 0px;
 }
 
-.lista-nav {
+.lista{
     list-style-type: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    right: 200px;
     
 }
 
-.link-nav {
-    width: 48px;
-    height: 19px;
+.links{
+  
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     color: #FFFFFF;
-    padding: 30px;
+    padding: 50px;
     text-decoration: none;
-    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.login-teto {
+.linkslogin {
     position: absolute;
     width: 120px;
     height: 22px;
@@ -45,7 +48,7 @@
     color: #C1D3FF;
 }
 
-.logo {
+.imglogo{
     position: absolute;
     width: 62.22px;
     height: 56px;
@@ -54,7 +57,7 @@
 
 }
 
-.icone {
+.perfil{
     position: absolute;
     width: 50.2px;
     height: 52px;

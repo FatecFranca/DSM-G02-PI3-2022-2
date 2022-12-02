@@ -17,9 +17,9 @@ const schema = yup
     answer: yup
       .string(),
     comment: yup
-      .string()
+      .string(),
   })
-
+  .required();
 export default function Questoes() {
   const {
     register,
@@ -29,6 +29,7 @@ export default function Questoes() {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
 
 
 
@@ -46,7 +47,7 @@ export default function Questoes() {
       })
   }, [])
 
-  const addPost = data => axios.post("http://localhost:3001/assessment/6340e4003feb7c46425ad26e/answer", data)
+  const addPost = data => axios.post("http://localhost:3001/assessment/637ec2e12affb96a174c85b2/answer", data)
     .then(() => {
       console.log(data)
       console.log("Cadastro de resposta completo")
@@ -59,39 +60,43 @@ export default function Questoes() {
   return (
     <div className="app">
       <Header />
-      
-      <div>
-        <p></p>
-      </div>
-    
-      <div>
-        <h1>avaliar</h1>
-      </div>
-      <div>
-        <h1>Avaliações</h1>
-      </div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+
+
 
       {quest.map((quest, key) => {
-  
-
         return (
-        
-            <div className="app" key={key}>
-              <div >
-                <form  className="forms" onSubmit={handleSubmit(addPost)}>
-                  <label className="labelavaliar">
-                    <p>Questão: {quest.enunciation}</p>
-                    <input className="input-avaliar" type="text" placeholder="complete com a sua resposta"{...register("answer", { required: true })} />
-                    <input className="input-avaliar" type="text" placeholder="Digite um comentario"{...register("comment")} />
-                    <input className="input-avaliar" type="text" placeholder="Digite o id da pergunta"{...register("question")} />
-                  </label>
-                  <button className="button-avaliar"type="submit" name="_next">
-                    Enviar Respostas
-                  </button>
-                </form>
-              </div>
+
+          <div className="asad" key={key}>
+
+            <div>
+              <form className="kkk" onSubmit={handleSubmit(addPost)}>
+                <div>
+                  <h1>AVALIAÇÃO</h1>
+                </div>
+                <p>QUESTION: {quest.enunciation}</p>
+                <p>CRITERION: {quest.criterion.description}</p>
+                <p>{quest.order}</p>
+                <label className="labelavaliar">
+                  answer
+                  <input className="input-avaliar" type="text" placeholder="Digite sua resposta"{...register("answer")} />
+                </label>
+                <label className="labelavaliar">
+                  comment
+                  <input className="input-avaliar" type="text" placeholder="Digite seu commentario"{...register("comment")} />
+                </label>
+                <label className="labelavaliar">
+                  <input type="hidden" value={quest._id} {...register("question")} />
+                </label>
+                <button className="button-avaliar" type="submit">
+                  Enviar Resposta
+                </button>
+              </form>
             </div>
-          
+          </div>
         )
       })}
 

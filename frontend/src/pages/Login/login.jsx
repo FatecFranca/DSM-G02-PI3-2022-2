@@ -45,6 +45,7 @@ export default function Login() {
 
   const addPost = data => axios.post("http://localhost:3001/user", data)
     .then(() => {
+      console.log()
       console.log("Cadastro de usuario realizado com sucesso")
       window.alert("Acesso Liberado");
       navigate('/Home')
