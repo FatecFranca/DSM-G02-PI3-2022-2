@@ -7,37 +7,36 @@ import "./header.css";
 //Header da aplicaçãõ
 export default function Header() {
   return (
-    <div className="nav">
+    <div className="header">
       <nav>
-        <ul className="lista-nav">
-          <img className="logo" src={Logo} />
-
+        <ul className="lista">
+          <img className="imglogo" src={Logo} />
           <li>
-            <Link className="login-teto" to="/Login">
+            <Link className="linkslogin" to="/Login">
               ErgonAssess
             </Link>
           </li>
           <li>
-            <Link className="link-nav" to="/Home">
+            <Link className="links" to="/Home">
               HOME
             </Link>
           </li>
           <li>
-            <Link className="link-nav" to="/Sobre">
+            <Link className="links" to="/Sobre">
               SOBRE
             </Link>
           </li>
           <li>
-            <Link className="link-nav" to="/Avaliar">
+            <Link className="links" to="/Avaliar">
               AVALIAR
             </Link>
           </li>
           <li>
-            <Link className="link-nav" to="/Glossario">
+            <Link className="links" to="/Glossario">
               GLOSSARIO
             </Link>
           </li>
-          <img className="icone" src={Icone} />
+        
         </ul>
       </nav>
     </div>
