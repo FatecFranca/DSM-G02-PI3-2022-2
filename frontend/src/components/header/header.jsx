@@ -9,11 +9,11 @@ export default function Header() {
   return (
     <div className="header">
       <nav>
-        <ul className="lista">
+        <ul className="flex-container">
           <img className="imglogo" src={Logo} />
           <li>
             <Link className="linkslogin" to="/Login">
-              ErgonAssess
+              ErgoAssess
             </Link>
           </li>
           <li>
