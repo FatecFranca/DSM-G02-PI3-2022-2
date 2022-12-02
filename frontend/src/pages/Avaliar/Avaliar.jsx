@@ -72,20 +72,19 @@ export default function Questoes() {
 
           <div className="asad" key={key}>
 
-            <div>
+            <div className="lal">
               <form className="kkk" onSubmit={handleSubmit(addPost)}>
-                <div>
-                  <h1>AVALIAÇÃO</h1>
-                </div>
+             
                 <p>QUESTION: {quest.enunciation}</p>
-                <p>CRITERION: {quest.criterion.description}</p>
-                <p>{quest.order}</p>
+                
+                <p>CRITERION : {quest.criterion.name} : {quest.criterion.description}</p>
+                
                 <label className="labelavaliar">
-                  answer
+                  Resposta
                   <input className="input-avaliar" type="text" placeholder="Digite sua resposta"{...register("answer")} />
                 </label>
                 <label className="labelavaliar">
-                  comment
+                  Comentario
                   <input className="input-avaliar" type="text" placeholder="Digite seu commentario"{...register("comment")} />
                 </label>
                 <label className="labelavaliar">
