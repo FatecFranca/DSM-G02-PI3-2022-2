@@ -11,7 +11,7 @@ import "./glossario.css";
 export default function Glossario() {
 
     return (
-        <div className="app">
+        <div className="info">
             <Header />
 
             <div className="glossario">

@@ -21,7 +21,7 @@
 .links{
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 16px;
     line-height: 19px;
     color: #FFFFFF;
@@ -30,6 +30,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .linkslogin {
