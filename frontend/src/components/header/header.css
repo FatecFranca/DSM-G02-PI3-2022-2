@@ -9,10 +9,11 @@
     top: 0px;
 }
 
-.lista{
+.flex-container {
     list-style-type: none;
     display: flex;
-    justify-content:center;
+    align-content: flex-end;
+    justify-content:center;      
    
 }
 

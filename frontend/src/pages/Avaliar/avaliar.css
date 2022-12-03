@@ -16,48 +16,4 @@
   
 }
 
-.button-avaliar {
-  width: 300px;
-  height: 50px;
-  background-color: aqua;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
 
-.input-avaliar::placeholder {
-  color: dimgray;
-  text-align: center;
-}
-
-p {
-  color: white;
-}
-
-
-.kkk {
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-
-}
-
-.lal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tabela {
-
-  color: aliceblue;
-  border-width: 3px;
-  border-style: solid;
-  height: 100px;
-  background-color: #202024;
-
-}
