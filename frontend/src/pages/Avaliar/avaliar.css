@@ -1,50 +1,63 @@
+.labelavaliar {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -25px;
+  color: white;
+  text-align: center;
+}
 
-.labelavaliar{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: -25px;
-    color: white;
-    text-align: center;
+.input-avaliar {
+  height: 50px;
+  width: 500px;
+  background: #202024;
+  border-radius: 50px;
+  color: aliceblue;
+  border-style: solid
+  
 }
-.input-avaliar{
-    height: 50px;
-    width: 500px;
-    background: #202024;
-    border-radius: 50px;
-    color: aliceblue;
-    border-style: solid 
-}
+
 .button-avaliar {
-    width: 300px;
-    height: 50px;
-    background-color: aqua;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  .input-avaliar::placeholder{
-    color:dimgray;
-    text-align: center;
-  }
-
-  p{
-    color: white;
-  }
-
-
-.kkk{
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    
+  width: 300px;
+  height: 50px;
+  background-color: aqua;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }
-.lal{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.input-avaliar::placeholder {
+  color: dimgray;
+  text-align: center;
 }
-    
+
+p {
+  color: white;
+}
+
+
+.kkk {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+}
+
+.lal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabela {
+
+  color: aliceblue;
+  border-width: 3px;
+  border-style: solid;
+  height: 100px;
+  background-color: #202024;
+
+}

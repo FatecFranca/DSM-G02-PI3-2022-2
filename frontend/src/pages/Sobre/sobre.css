@@ -2,13 +2,13 @@
     position: absolute;
     width: 105px;
     height: 44px;
-    left: 117px;
+    left: 100px;
     top: 205px;
     color: #ffff;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
-    font-size: 36px;
+    font-size: 38px;
     line-height: 44px;
 }
 
@@ -16,21 +16,17 @@
     position: absolute;
     width: 633px;
     height: 179px;
-    left: 117px;
+    left: 100px;
     top: 275px;
-
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 24px;
     text-align: justify;
     color: #FFFFFF;
 }
 
 .sobre img{
     position: absolute;
-    width: 432px;
     height: 419px;
     left: 839px;
     top: 227px;

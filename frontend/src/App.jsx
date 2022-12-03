@@ -21,8 +21,6 @@ function App() {
         <Route path="/Avaliar" element={<Avaliar />} />
         <Route path="/Glossario" element={<Glossario />} />
         <Route path="/Sobre" element={<Sobre />} />
-
-
       </Routes>
     </Router>
   );
