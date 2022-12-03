@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <div className="header">
       <nav>
-        <ul className="flex-container">
+        <ul className="lista">
           <img className="imglogo" src={Logo} />
           <li>
             <Link className="linkslogin" to="/Login">

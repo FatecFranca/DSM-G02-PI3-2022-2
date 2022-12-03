@@ -1,9 +1,10 @@
 .sobre h1 {
-    
     position: absolute;
     width: 105px;
     height: 44px;
-
+    left: 100px;
+    top: 205px;
+    color: #ffff;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
@@ -15,19 +16,18 @@
     position: absolute;
     width: 633px;
     height: 179px;
-
+    left: 100px;
+    top: 275px;
     font-family: 'Inter';
     font-style: normal;
     font-size: 24px;
     text-align: justify;
-    color:#C1D3FF;
+    color: #FFFFFF;
 }
-
 
 .sobre img{
     position: absolute;
-
+    height: 419px;
     left: 839px;
     top: 227px;
-    border-radius: 2%;
 }
