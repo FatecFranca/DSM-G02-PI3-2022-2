@@ -1,9 +1,7 @@
 import React from "react";
 import Header from "../../components/header/header";
-import imgbooks from "../../img/Books.png";
-import imgvoltar from "../../img/voltar.png";
 import seta from "../../img/check.png";
-import { Link } from "react-router-dom";
+
 
 import "./glossario.css";
 
@@ -15,37 +13,55 @@ export default function Glossario() {
             <Header />
 
             <div className="glossario">
-                <img className="logo-voltar" src={imgvoltar} />
-                <img className="logo-boks" src={imgbooks} />
-                <h2> Glossario </h2>
+                <h1> Glossário </h1>
             </div>
             <div className="conteudo">
                 <p>
-                    O glossário aqui apresentado não tem a intenção de ser uma obra de referência completa. O seu objetivo é esclarecer os significados de alguns termos usados nesse trabalho.  Um termo pode ser incluído nesse glossário, se utilizado inconsistentemente na literatura em geral,  ou se o seu significado nesse trabalho for mais específico do que o normal.
+                    O glossário aqui apresentado não tem a intenção de ser uma obra de referência completa. O seu objetivo é esclarecer os significados de alguns termos usados nesse trabalho.  Um termo pode ser incluído nesse glossário,se utilizado inconsistentemente na literatura em geral,ou se o seu significado nesse trabalho for mais específico do que o normal.
                 </p>
 
             </div>
-            <button className="sobre-button"><Link className="link-sobre" to="/Sobre">Sobre</Link></button>
-            <button className="termos-button"> Termos </button>
-            <input className="input-pesquisa" type={"text"} placeholder='Digite algo para realizar a pesquisa'></input>
+
+            <h2 className="termos-button">Termos</h2>
+
             <div className="informacao">
 
-                <h2> <img className="seta" src={seta} /> Presteza</h2>
-                <p>Esse critério engloba os meios utilizados para levar o usuário a realizar determinadas ações, como, por exemplo, entrada de dados. Esse critério engloba também todos os mecanismos ou meios que permitem ao usuário conhecer as alternativas, em termos de ações, conforme o estado ou contexto nos quais ele se encontra. A presteza diz respeito igualmente às informações que permitem ao usuário identificar o estado ou contexto no qual ele se encontra, bem como as ferramentas de ajuda e seu modo de acesso.</p>
-                <h2> <img className="seta" src={seta} /> Agrupamento/Distinção de Itens</h2>
-                <p>O critério Agrupamento/Distinção de Itens diz respeito à organização visual dos itens de informação relacionados uns com os outros de alguma maneira. Esse critério leva em conta a localização e algumas características gráficas (formato) para indicar as relações entre os vários itens mostrados, para indicar se eles pertencem ou não a uma dada classe, ou ainda para indicar diferenças entre classes. Esse critério também diz respeito à organização dos itens de uma classes. O critério agrupamento/distinção de itens está subdividido em dois critérios: agrupamento/distinção por localização e agrupamento/distinção por formato.</p>
-                <h2><img className="seta" src={seta} /> Agrupamento/Distinção por Localização</h2>
-                <p>O critério de Agrupamento/Distinção por Localização diz respeito ao posicionamento relativo dos itens, estabelecido para indicar se eles pertencem ou não a uma dada classe, ou, ainda, para indicar diferenças entre classes. Esse critério também diz respeito ao posicionamento relativo dos itens dentro de uma classe.</p>
-                <h2> <img className="seta" src={seta} /> Agrupamento/Distinção por Formato</h2>
-                <p>O critério de Agrupamento/Distinção por Formato diz respeito mais especificamente às características gráficas (formato, cor, etc.) que indicam se itens pertencem ou não a uma dada classe, ou que indicam ainda distinções entre classes diferentes ou distinções entre itens de uma dada classe.</p>
-                <h2><img className="seta" src={seta} /> Feedback Imediato</h2>
-                <p>O Feedback Imediato diz respeito às respostas do sistema às ações do usuário. Tais entradas podem ir do simples pressionar de uma tecla até uma lista de comandos. Em todos os casos, respostas do computador devem ser fornecidas, de forma rápida, com passo (timing) apropriado e consistente para cada tipo de transação. De todo modo, uma resposta rápida deve ser fornecida com informações sobre a transação solicitada e seu resultado.</p>
-                <h2><img className="seta" src={seta} /> Legibilidade</h2>
-                <p>A Legibilidade diz respeito às características lexicais das informações apresentadas na tela que possam dificultar ou facilitar a leitura dessa informação (brilho do caractere, contraste letra/fundo, tamanho da fonte, espaçamento entre palavras, espaçamento entre linhas, espaçamento de parágrafos, comprimento da linha, etc.). Por definição, o critério Legibilidade não abrange mensagens de erro ou de feedback.</p>
-                <h2> <img className="seta" src={seta} /> Carga de Trabalho</h2>
-                <p>Carga de Trabalho O critério Carga de Trabalho diz respeito a todos os elementos da interface que têm um papel importante na redução da carga cognitiva e perceptiva do usuário e no aumento da eficiência do diálogo. O critério Carga de Trabalho está subdividido em dois critérios: Brevidade (que inclui Concisão e Ações Mínimas) e Densidade Informacional.</p>
-                <h2><img className="seta" src={seta} /> Brevidade</h2>
-                <p>O critério de Brevidade diz respeito à carga de trabalho perceptiva e cognitiva, tanto para entradas e saídas individuais, quanto para conjuntos de entradas (isto é, conjuntos de ações necessárias para se alcançar uma meta). A Brevidade corresponde ao objetivo de limitar a carga de trabalho de leitura e entradas, e o número de passos. O critério de Brevidade está subdividido em dois critérios: Concisão e Ações Mínimas.</p>
+                <h2> <img className="seta" src={seta} />Animação</h2>
+                <p>Conjunto de imagens que, apresentadas em sequência, dão efeito de animação. As animações visam chamar a atenção do usuário.
+                </p>
+                <h2><img className="seta" src={seta} />Apresentação</h2>
+                <p>Saída de dados de um computador para o usuário. Geralmente, esse termo denota uma saída de dados visual, mas pode ser qualificada para indicar uma modalidade diferente, como por exemplo, uma apresentação sonora.
+                </p>
+                <h2><img className="seta" src={seta} />Apresentação Analógica </h2>
+                <p>Estilo de apresentação gráfica baseada em analogias com dispositivos físicos de apresentação, como velocímetros, altímetros, etc.
+                </p>
+                <h2> <img className="seta" src={seta} />Apresentação Digital
+                </h2>
+                <p>Estilo de apresentação baseada em dígitos.</p>
+                <h2><img className="seta" src={seta} />Apresentação Sonora </h2>
+                <p>Apresentação de dados e informações realizadas através de dispositivos de apresentação sonora.
+                </p>
+                <h2> <img className="seta" src={seta} />Área</h2>
+                <p>Região ou seção de uma tela ou janela que está localizada em uma posição consistente e é utilizada consistentemente para atingir um objetivo específico.
+                </p>
+                <h2><img className="seta" src={seta} />Atributo</h2>
+                <p>Propriedade de um objeto ou sua representação que pode ser modificado pelo usuário em determinados contextos, por exemplo, cor, tamanho, padrão ou fonte.
+                </p>
+                <h2><img className="seta" src={seta} />Barra de Rolagem </h2>
+                <p>Controle que permite ao usuário visualizar objetos que extrapolam o tamanho da área disponível para visualização.</p>
+                <h2><img className="seta" src={seta} />Botão</h2>
+                <p>Figura representando botões materiais e que, normalmente, é selecionada por um dispositivo de apontamento (mouse) ou teclas de cursor, e executada por um botão do dispositivo de apontamento ou a tecla "Enter".</p>
+                <h2><img className="seta" src={seta} />Botão de Rádio </h2>
+                <p>Componente gráfico que simula os botões de um rádio real. Cada botão representa uma alternativa mutuamente exclusiva.</p>
+                <h2><img className="seta" src={seta} />Cabeçalho</h2>
+                <p>Rótulo identificativo posicionado na parte superior de uma tabela ou lista.</p>
+                <h2><img className="seta" src={seta} />Caixa de agrupamento</h2>
+                <p>Linhas que formam um retângulo vazado envolvendo um conjunto de objetos relacionados.</p>
+                <h2><img className="seta" src={seta} />Caixa de Diálogoo</h2>
+                <p>Painel que apresenta um conjunto de diferentes tipos de mostradores de dados, informações, mensagens, controles e comandos para apoiar o usuário em uma ação específica.</p>
+                <h2><img className="seta" src={seta} />Caixa de Mensagem</h2>
+                <p>Nome genérico dado a qualquer caixa de diálogo que forneça informação, ou o estado corrente de um processamento em andamento, ou faça uma pergunta, ou apresente um aviso, ou chame atenção para um erro.</p>
+
             </div>
         </div>
     );

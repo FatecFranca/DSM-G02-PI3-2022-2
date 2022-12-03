@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../img/logoergon.png";
-import Icone from "../../img/user.png";
+
 import "./header.css";
 
 //Header da aplicaçãõ
@@ -36,7 +36,7 @@ export default function Header() {
               GLOSSARIO
             </Link>
           </li>
-        
+         
         </ul>
       </nav>
     </div>

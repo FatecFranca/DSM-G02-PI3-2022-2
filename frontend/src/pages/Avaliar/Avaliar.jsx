@@ -65,27 +65,30 @@ export default function Questoes() {
       <div></div>
       <div></div>
 
-
-
       {quest.map((quest, key) => {
         return (
 
           <div className="asad" key={key}>
 
             <div className="lal">
+
               <form className="kkk" onSubmit={handleSubmit(addPost)}>
-             
-                <p>QUESTION: {quest.enunciation}</p>
-                
-                <p>CRITERION : {quest.criterion.name} : {quest.criterion.description}</p>
-                
+                <table className="tabela">
+                  <tr>
+                    <td>Critério: {quest.criterion.name}</td>
+                  </tr>
+                  <tr>
+                    <td>Questão: {quest.enunciation}</td>
+                  </tr>
+                </table>
+
                 <label className="labelavaliar">
-                  Resposta
-                  <input className="input-avaliar" type="text" placeholder="Digite sua resposta"{...register("answer")} />
+                  Insira Y: sim - N: não - X: não aplicável - P: resposta adiada
+                  <input className="input-avaliar" type="text" placeholder="Insira aqui sua resposta"{...register("answer")} />
                 </label>
                 <label className="labelavaliar">
-                  Comentario
-                  <input className="input-avaliar" type="text" placeholder="Digite seu commentario"{...register("comment")} />
+                  Caso necessário comente aqui
+                  <input className="input-avaliar" type="text" placeholder="Insira aqui seu comentário"{...register("comment")} />
                 </label>
                 <label className="labelavaliar">
                   <input type="hidden" value={quest._id} {...register("question")} />

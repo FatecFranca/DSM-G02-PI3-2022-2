@@ -31,6 +31,12 @@
     align-items: center;
     
 }
+a.links{
+    margin-bottom: 100px;
+}
+a.links:hover{
+    color: #81D8F7;
+}
 
 .linkslogin {
     position: absolute;
@@ -44,8 +50,10 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 22px;
-
     color: #C1D3FF;
+}
+.linkslogin:hover{
+    color: #81D8F7;
 }
 
 .imglogo{
@@ -61,7 +69,7 @@
     position: absolute;
     width: 50.2px;
     height: 52px;
-    left: 1290px;
+    left: 1600px;
     top: 12px;
 }
 
